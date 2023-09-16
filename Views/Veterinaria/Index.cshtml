@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Procedimento>
+@{
+    ViewData["title"] = "Clinica Veterinaria";
+}
+
+<div class="container ">
+
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h1>Procedimentos</h1>
+        <a class="btn btn-success mx-2" asp-controller="Veterinaria" asp-action="CadastrarAnimal"><i class="bi bi-file-earmark-plus"></i>Cadastar Novo Animal</a>
+        <a class="btn btn-success mx-2" asp-controller="Veterinaria" asp-action="CadastrarProcedimento"><i class="bi bi-file-earmark-plus"></i>Cadastar Novo Procedimento</a>
+    </div>
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success text-light" role="alert">
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger text-light" role="alert">
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <table id="Emprestimos" class="table table-light table-hover mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data</th>
+                <th scope="col">Custo</th>
+                <th scope="col">Animal</th>
+                <th scope="col">Codigo</th>
+               @* <th scope="col">Última atualização</th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                @foreach (var procedimento in Model)
+                {
+                    <tr>
+                        <th scope="row">@procedimento.Descricao</th>
+                        <td>@procedimento.Data</td>
+                        <td>@procedimento.Custo</td>
+                        <td>@procedimento.Animal</td>
+                        <td>@procedimento.Codigo</td>
+                        <td>
+                            <a class="btn btn-warning mx-2" asp-controller="Procedimento" asp-action="Editar" asp-route-id="@procedimento.Id"><i class="bi bi-pencil-square"></i>Editar</a>
+                            <a class="btn btn-danger mx-2" asp-controller="Procedimento" asp-action="Excluir" asp-route-id="@procedimento.Id" onclick="return confirm("Tem certeza que deseja excluir?")"><i class="bi bi-trash3-fill"></i>Excluir</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

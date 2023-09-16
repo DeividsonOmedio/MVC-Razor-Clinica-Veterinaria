@@ -1,0 +1,43 @@
+﻿@model Animal
+@{
+ ViewData["title"] = "Cadastrar Animal";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Cadastro de Animais</h1>
+    </div>
+    <form method="post" asp-controller="Veterinaria" asp-action="CadastrarAnimal">
+        <div class="mb-3">
+            <label for="Nome" class="text-light form-label">Nome:</label>
+            <input type="text" asp-for="Nome" class="shadow-none form-control" id="exampleInputRecebedor" placeholder="Nome">
+            <span class="text-danger" asp-validation-for="Nome"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Especie" class="text-light form-label">Especie:</label>
+            <input asp-for="Especie" type="text" class="form-control shadow-none" id="exampleInputFornecedor">
+            <span class="text-danger" asp-validation-for="Especie"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Raca" class="text-light form-label">Raca:</label>
+            <input asp-for="Raca" type="text" class="form-control shadow-none" id="exampleInputFornecedor" Placeholder="Animal">
+            <span class="text-danger" asp-validation-for="Raca"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Idade" class="text-light form-label">Idade:</label>
+            <input asp-for="Idade" type="number" class="form-control shadow-none" id="exampleInputFornecedor">
+            <span class="text-danger" asp-validation-for="Idade"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Dono" class="text-light form-label">Dono:</label>
+            <input asp-for="Dono" type="text" class="form-control shadow-none" id="exampleInputFornecedor">
+            <span class="text-danger" asp-validation-for="Dono"></span>
+        </divDono
+        <div class="d-flex gap-5 mt-5">
+                <button type="submit" class="btn btn-success w-50" >Adicionar</button>
+            <a class="btn btn-primary w-50" asp-controller="Veterinaria" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+
+
+</div>
