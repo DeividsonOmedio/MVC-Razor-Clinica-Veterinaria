@@ -5,7 +5,7 @@
 
 <div class="container bg-dark p-5 rounded-5">
     <div class="mb-5 text-center">
-        <h1 class="text-light">Cadastro de Empréstimos</h1>
+        <h1 class="text-light">Cadastro de Procedimentos</h1>
     </div>
     <form method="post" asp-controller="Veterinaria" asp-action="CadastrarProcedimento">
         <div class="mb-3">
@@ -21,10 +21,10 @@
         <div class="mb-3">
            @* @foreach(var animal in )*@
             
-            <label for="Animal" class="text-light form-label">Animal:</label>
-            <input asp-for="Animal" type="number" class="form-control shadow-none" id="exampleInputFornecedor" Placeholder="Animal">
+            <label for="AnimalId" class="text-light form-label">Animal:</label>
+            <input asp-for="AnimalId" type="number" class="form-control shadow-none" id="exampleInputFornecedor" Placeholder="Animal">
             
-            <span class="text-danger" asp-validation-for="Animal"></span>
+            <span class="text-danger" asp-validation-for="AnimalId"></span>
             
         </div>
         <div class="mb-3">
@@ -38,9 +38,18 @@
             <span class="text-danger" asp-validation-for="Codigo"></span>
         </div>
         <div class="mb-3">
-            <label for="Funcionario" class="text-light form-label">Funcionario:</label>
-            <input asp-for="Funcionario" type="number" class="form-control shadow-none" id="exampleInputFornecedor">
-            <span class="text-danger" asp-validation-for="Funcionario"></span>
+            <label for="FuncionarioId" class="text-light form-label">Funcionario:</label>
+            <input asp-for="FuncionarioId" type="number" class="form-control shadow-none" id="exampleInputFornecedor">
+            <span class="text-danger" asp-validation-for="FuncionarioId"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Status" class="text-light form-label">Status:</label>
+            <select asp-for="Status" class="form-control shadow-none">
+                <option value="0">Pendente</option>
+                <option value="1">Executando</option>
+                <option value="2">Finalizado</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Status"></span>
         </div>
         <div class="mb-3">
             <label for="UltimaAtualizacao" class="text-light form-label">UltimaAtualizacao:</label>

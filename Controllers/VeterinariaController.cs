@@ -1,6 +1,7 @@
 ﻿using ClinicaVeterinaria.Context;
 using ClinicaVeterinaria.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicaVeterinaria.Controllers
 {
@@ -26,8 +27,8 @@ namespace ClinicaVeterinaria.Controllers
 
         public IActionResult CadastrarProcedimento()
         {
-            var animais = _Contex.Animais;
-            return View(animais);
+            
+            return View();
         }
         [HttpPost]
         public IActionResult CadastrarAnimal(Animal novoAnimal)
@@ -48,8 +49,7 @@ namespace ClinicaVeterinaria.Controllers
         [HttpPost]
         public IActionResult CadastrarProcedimento(Procedimento novoPrcedimento)
         {
-            novoPrcedimento.AnimalId = Convert.ToInt32(novoPrcedimento.Animal);
-            novoPrcedimento.FuncionarioId = Convert.ToInt32(novoPrcedimento.Funcionario);
+            
 
             var conferencia = _Contex.Procedimentos.FirstOrDefault(x => x.Codigo == novoPrcedimento.Codigo);
             if (conferencia != null)
@@ -57,8 +57,7 @@ namespace ClinicaVeterinaria.Controllers
                 TempData["MensagemErro"] = "Procedimento já cadastrado";
                 return View("Index");
             }
-            if (ModelState.IsValid)
-            {
+            
                 try
                 {
                     _Contex.Procedimentos.Add(novoPrcedimento);
@@ -66,25 +65,26 @@ namespace ClinicaVeterinaria.Controllers
                 }
                 catch
                 {
-                    return View("Index");
+                    return NotFound("Não foi possivel adicionar ao banco");
                 }
                 TempData["MensagemSucesso"] = "Adição realizada com sucesso!";
-                return View("Index");
-            }
-            return View("Index");
+                return RedirectToAction("Index");
+            
+            
         }
+        
         public IActionResult Editar(int id)
         {
             if (id == null || id == 0)
             {
-                return NotFound();
+                return NotFound("Id 0");
             }
 
             Procedimento procedimento = _Contex.Procedimentos.FirstOrDefault(x => x.Id == id);
 
             if (procedimento == null)
             {
-                return NotFound();
+                return NotFound("Id nao localizado");
             }
 
 
@@ -93,7 +93,7 @@ namespace ClinicaVeterinaria.Controllers
         [HttpPost]
         public IActionResult Editar(Procedimento procedimento)
         {
-            if (ModelState.IsValid)
+            try
             {
                 _Contex.Procedimentos.Update(procedimento);
                 _Contex.SaveChanges();
@@ -102,8 +102,28 @@ namespace ClinicaVeterinaria.Controllers
 
                 return RedirectToAction("Index");
             }
+            catch
+            {
+                return NotFound("nao foi possivel atualizar no banco");
+            }
 
-            TempData["MensagemErro"] = "Ocorreu algum erro no momento da edição!";
+            
+        }
+        public IActionResult Deletar(int id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound("Id 0");
+            }
+
+            Procedimento procedimento = _Contex.Procedimentos.FirstOrDefault(x => x.Id == id);
+
+            if (procedimento == null)
+            {
+                return NotFound("Id nao localizado");
+            }
+
+
             return View(procedimento);
         }
         [HttpPost]

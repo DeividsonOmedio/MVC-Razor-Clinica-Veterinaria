@@ -1,4 +1,6 @@
-﻿namespace ClinicaVeterinaria.Models
+﻿using ClinicaVeterinaria.Models.Enums;
+
+namespace ClinicaVeterinaria.Models
 {
     public class Procedimento : Generic
     {
@@ -11,5 +13,6 @@
         public int FuncionarioId { get; set; }
         public Funcionario Funcionario { get; set; }
         public DateTime UltimaAtualizacao { get; set; }
+        public StatusEnum Status { get; set; }
     }
 }

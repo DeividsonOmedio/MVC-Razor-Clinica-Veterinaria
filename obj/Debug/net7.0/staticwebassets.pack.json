@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ClinicaVeterinaria.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\OneDrive\\Documentos\\C#\\MVC-Razor-Clinica-Veterinaria\\wwwroot\\css\\png-lovely-dog-removebg-preview.png",
+      "PackagePath": "staticwebassets\\css\\png-lovely-dog-removebg-preview.png"
+    },
+    {
       "Id": "C:\\Users\\user\\OneDrive\\Documentos\\C#\\MVC-Razor-Clinica-Veterinaria\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -7,8 +7,7 @@
 
     <div class="d-flex justify-content-between align-items-center mb-5">
         <h1>Procedimentos</h1>
-        <a class="btn btn-success mx-2" asp-controller="Veterinaria" asp-action="CadastrarAnimal"><i class="bi bi-file-earmark-plus"></i>Cadastar Novo Animal</a>
-        <a class="btn btn-success mx-2" asp-controller="Veterinaria" asp-action="CadastrarProcedimento"><i class="bi bi-file-earmark-plus"></i>Cadastar Novo Procedimento</a>
+        <a class="btn btn-light mx-2" asp-controller="Veterinaria" asp-action="CadastrarAnimal"><i class="bi bi-file-earmark-plus"></i>Cadastar Novo Animal</a>
     </div>
     @if (TempData["MensagemSucesso"] != null)
     {
@@ -30,6 +29,7 @@
                 <th scope="col">Data</th>
                 <th scope="col">Custo</th>
                 <th scope="col">Animal</th>
+                <th scope="col">Status</th>
                 <th scope="col">Codigo</th>
                @* <th scope="col">Última atualização</th>*@
                 <th></th>
@@ -45,15 +45,45 @@
                         <th scope="row">@procedimento.Descricao</th>
                         <td>@procedimento.Data</td>
                         <td>@procedimento.Custo</td>
-                        <td>@procedimento.Animal</td>
+                        <td>@procedimento.AnimalId</td>
+                        <td>@procedimento.Status</td>
                         <td>@procedimento.Codigo</td>
                         <td>
-                            <a class="btn btn-warning mx-2" asp-controller="Procedimento" asp-action="Editar" asp-route-id="@procedimento.Id"><i class="bi bi-pencil-square"></i>Editar</a>
-                            <a class="btn btn-danger mx-2" asp-controller="Procedimento" asp-action="Excluir" asp-route-id="@procedimento.Id" onclick="return confirm("Tem certeza que deseja excluir?")"><i class="bi bi-trash3-fill"></i>Excluir</a>
+                            <a class="btn btn-warning mx-2" asp-controller="Veterinaria" asp-action="Editar" asp-route-id="@procedimento.Id"><i class="bi bi-pencil-square"></i>Editar</a>
+                            
+                                <button class="btn btn-danger mx-1" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="bi bi-trash3-fill"></i>Excluir</button>
+
+                            
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Confirmar exclusão</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            Animal: @procedimento.AnimalId <br>
+                                            Descrição: @procedimento.Descricao
+                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" asp-controller="Veterinaria" asp-action="Excluir" asp-route-id="@procedimento.Id">Voltar</button>
+                                                <form asp-action="Excluir">
+                                                <button type="submit" class="btn btn-dark mx-2" asp-controller="Veterinaria" asp-action="Excluir" asp-route-id="@procedimento.Id">Excluir</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
                         </td>
                     </tr>
                 }
             }
+            <!-- Button trigger modal -->
+            
+
+            <!-- Modal -->
+            
         </tbody>
     </table>
 </div>
