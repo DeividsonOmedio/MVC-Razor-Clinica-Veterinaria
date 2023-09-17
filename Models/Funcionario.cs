@@ -1,6 +1,6 @@
 ﻿namespace ClinicaVeterinaria.Models
 {
-    public class Funcionarios : Generic
+    public class Funcionario : Generic
     {
         public string Email { get; set; }
         public string Senha { get; set; }

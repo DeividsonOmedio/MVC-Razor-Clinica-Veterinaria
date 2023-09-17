@@ -8,7 +8,7 @@ namespace ClinicaVeterinaria.Context
     {
         public DbSet<Animal> Animais { get; set; }
         public DbSet<Procedimento> Procedimentos { get; set; }
-        public DbSet<Funcionarios> Funcionarios { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {

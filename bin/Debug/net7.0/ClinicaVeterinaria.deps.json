@@ -9,6 +9,7 @@
       "ClinicaVeterinaria/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.11",
+          "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.EntityFrameworkCore.Design": "7.0.11",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
         },

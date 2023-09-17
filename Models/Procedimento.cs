@@ -8,5 +8,8 @@
         public int AnimalId { get; set; }
         public Animal Animal { get; set; }
         public string Codigo { get; set; }
+        public int FuncionarioId { get; set; }
+        public Funcionario Funcionario { get; set; }
+        public DateTime UltimaAtualizacao { get; set; }
     }
 }

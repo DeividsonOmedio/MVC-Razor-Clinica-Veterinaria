@@ -9,65 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ClinicaVeterinaria
 build_property.RootNamespace = ClinicaVeterinaria
-build_property.ProjectDir = C:\Users\deivi\source\repos\ClinicaVeterinaria\
+build_property.ProjectDir = C:\Users\user\OneDrive\Documentos\C#\MVC-Razor-Clinica-Veterinaria\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\deivi\source\repos\ClinicaVeterinaria
+build_property.MSBuildProjectDirectory = C:\Users\user\OneDrive\Documentos\C#\MVC-Razor-Clinica-Veterinaria
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Home/Index.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Home/Privacy.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Login/Index.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Relatorios/Cliente.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Relatorios/Cliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsYXRvcmlvc1xDbGllbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Relatorios/Clinica.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Relatorios/Clinica.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsYXRvcmlvc1xDbGluaWNhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Shared/Error.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Veterinaria/CadastrarAnimal.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Veterinaria/CadastrarAnimal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaWFcQ2FkYXN0cmFyQW5pbWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Veterinaria/CadastrarProcedimento.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Veterinaria/CadastrarProcedimento.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaWFcQ2FkYXN0cmFyUHJvY2VkaW1lbnRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Veterinaria/Editar.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Veterinaria/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaWFcRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Veterinaria/Index.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Veterinaria/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/_ViewImports.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/_ViewStart.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deivi/source/repos/ClinicaVeterinaria/Views/Shared/_Layout.cshtml]
+[C:/Users/user/OneDrive/Documentos/C\#/MVC-Razor-Clinica-Veterinaria/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gss8kw8b9a

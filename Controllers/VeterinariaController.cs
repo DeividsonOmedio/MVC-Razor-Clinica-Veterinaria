@@ -26,7 +26,8 @@ namespace ClinicaVeterinaria.Controllers
 
         public IActionResult CadastrarProcedimento()
         {
-            return View();
+            var animais = _Contex.Animais;
+            return View(animais);
         }
         [HttpPost]
         public IActionResult CadastrarAnimal(Animal novoAnimal)
@@ -34,22 +35,22 @@ namespace ClinicaVeterinaria.Controllers
             
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _Contex.Add(novoAnimal);
+                
+                    _Contex.Animais.Add(novoAnimal);
                     _Contex.SaveChanges();
-                }
-                catch
-                {
-                    return View("Index");
-                }
+              
+                
                 TempData["MensagemSucesso"] = "Adição realizada com sucesso!";
                 return View("Index");
             }
             return View("Index");
         }
+        [HttpPost]
         public IActionResult CadastrarProcedimento(Procedimento novoPrcedimento)
         {
+            novoPrcedimento.AnimalId = Convert.ToInt32(novoPrcedimento.Animal);
+            novoPrcedimento.FuncionarioId = Convert.ToInt32(novoPrcedimento.Funcionario);
+
             var conferencia = _Contex.Procedimentos.FirstOrDefault(x => x.Codigo == novoPrcedimento.Codigo);
             if (conferencia != null)
             {
@@ -60,7 +61,7 @@ namespace ClinicaVeterinaria.Controllers
             {
                 try
                 {
-                    _Contex.Add(novoPrcedimento);
+                    _Contex.Procedimentos.Add(novoPrcedimento);
                     _Contex.SaveChanges();
                 }
                 catch

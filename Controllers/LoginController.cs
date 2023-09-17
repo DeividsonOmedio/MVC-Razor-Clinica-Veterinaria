@@ -18,14 +18,14 @@ namespace ClinicaVeterinaria.Controllers
         {
             return View();
         }
-        public IActionResult Login(string email, string senha)
+        public IActionResult Login(Funcionario login)
         {
-            var Conferencia = _Context.Funcionarios.FirstOrDefault(x => x.Email == email);
+            var Conferencia = _Context.Funcionarios.FirstOrDefault(x => x.Email == login.Email);
             if(Conferencia == null) 
             {
                 return View("Index");
             }
-            if(Conferencia.Senha != senha)
+            if(Conferencia.Senha != login.Senha)
             {
                 return View("Index");
             }
