@@ -1,4 +1,4 @@
-﻿@model  Procedimento
+﻿@model Procedimento
 @{
     ViewData["title"] = "Cadastrar Procedimento";
 }
@@ -45,9 +45,9 @@
         <div class="mb-3">
             <label for="Status" class="text-light form-label">Status:</label>
             <select asp-for="Status" class="form-control shadow-none">
-                <option value="0">Pendente</option>
-                <option value="1">Executando</option>
-                <option value="2">Finalizado</option>
+                <option value="1">Pendente</option>
+                <option value="2">Executando</option>
+                <option value="3">Finalizado</option>
             </select>
             <span class="text-danger" asp-validation-for="Status"></span>
         </div>

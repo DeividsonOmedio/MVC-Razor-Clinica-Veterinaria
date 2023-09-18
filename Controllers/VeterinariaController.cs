@@ -1,5 +1,6 @@
 ﻿using ClinicaVeterinaria.Context;
 using ClinicaVeterinaria.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,9 +14,12 @@ namespace ClinicaVeterinaria.Controllers
         {
             _Contex = contex;
         }
-
+        
         public IActionResult Index()
         {
+            var funcionario = _Contex.Funcionarios.FirstOrDefault(x => x.Email == "admin@admin.com.br");
+            if (funcionario.Ativo)
+                return RedirectToAction("Index", "Home", new { area = "" });
             IEnumerable<Procedimento> procedimentos = _Contex.Procedimentos;
             return View(procedimentos);
         
@@ -27,7 +31,10 @@ namespace ClinicaVeterinaria.Controllers
 
         public IActionResult CadastrarProcedimento()
         {
-            
+            var funcionario = _Contex.Funcionarios.FirstOrDefault(x => x.Email == "admin@admin.com.br");
+            if (funcionario.Ativo == false)
+                return RedirectToAction("Index", "Home", new { area = "" });
+
             return View();
         }
         [HttpPost]

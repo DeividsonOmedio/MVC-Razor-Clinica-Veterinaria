@@ -15,7 +15,7 @@ builder.Services.AddCors(options => {
 });
 
 builder.Services.AddDbContext<MyDbContext>(options =>
-    options.UseMySql("server=localhost; port=3306; user id=root; password=curso4311; database=ClinicaVeterinaria", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-MySqlCharSetAttribute")));
+    options.UseMySql("server=localhost; port=3306; user id=root; password=curso4311; database=clinicaveterinaria", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-MySqlCharSetAttribute")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

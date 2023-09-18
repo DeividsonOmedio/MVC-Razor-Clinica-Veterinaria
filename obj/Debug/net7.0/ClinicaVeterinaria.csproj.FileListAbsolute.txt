@@ -94,3 +94,4 @@ C:\Users\user\OneDrive\Documentos\C#\MVC-Razor-Clinica-Veterinaria\obj\Debug\net
 C:\Users\user\OneDrive\Documentos\C#\MVC-Razor-Clinica-Veterinaria\obj\Debug\net7.0\ClinicaVeterinaria.pdb
 C:\Users\user\OneDrive\Documentos\C#\MVC-Razor-Clinica-Veterinaria\obj\Debug\net7.0\ClinicaVeterinaria.genruntimeconfig.cache
 C:\Users\user\OneDrive\Documentos\C#\MVC-Razor-Clinica-Veterinaria\obj\Debug\net7.0\ref\ClinicaVeterinaria.dll
+C:\Users\user\OneDrive\Documentos\C#\MVC-Razor-Clinica-Veterinaria\bin\Debug\net7.0\web.config

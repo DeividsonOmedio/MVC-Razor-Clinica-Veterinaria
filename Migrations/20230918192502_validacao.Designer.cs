@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicaVeterinaria.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20230916212147_criacaoTabelas")]
-    partial class criacaoTabelas
+    [Migration("20230918192502_validacao")]
+    partial class validacao
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,11 +55,14 @@ namespace ClinicaVeterinaria.Migrations
                     b.ToTable("Animais");
                 });
 
-            modelBuilder.Entity("ClinicaVeterinaria.Models.Funcionarios", b =>
+            modelBuilder.Entity("ClinicaVeterinaria.Models.Funcionario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -101,9 +104,20 @@ namespace ClinicaVeterinaria.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("FuncionarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UltimaAtualizacao")
+                        .HasColumnType("datetime(6)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AnimalId");
+
+                    b.HasIndex("FuncionarioId");
 
                     b.ToTable("Procedimentos");
                 });
@@ -116,7 +130,15 @@ namespace ClinicaVeterinaria.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ClinicaVeterinaria.Models.Funcionario", "Funcionario")
+                        .WithMany()
+                        .HasForeignKey("FuncionarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Animal");
+
+                    b.Navigation("Funcionario");
                 });
 #pragma warning restore 612, 618
         }

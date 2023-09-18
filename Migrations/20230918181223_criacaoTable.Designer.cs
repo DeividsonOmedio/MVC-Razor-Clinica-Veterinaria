@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicaVeterinaria.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20230917210809_criacaoStatus")]
-    partial class criacaoStatus
+    [Migration("20230918181223_criacaoTable")]
+    partial class criacaoTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicaVeterinaria.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20230916221411_atualizaTabelas")]
-    partial class atualizaTabelas
+    [Migration("20230918182235_criacaoTabelas")]
+    partial class criacaoTabelas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -102,6 +102,9 @@ namespace ClinicaVeterinaria.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<int>("FuncionarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("UltimaAtualizacao")

@@ -7,6 +7,7 @@
 
     <div class="d-flex justify-content-between align-items-center mb-5">
         <h1>Procedimentos</h1>
+        <a class="btn btn-secondary mx-2" asp-controller="Veterinaria" asp-action="CadastrarProcedimento"><i class="bi bi-file-earmark-plus"></i>Cadastar Novo Procedimento</a>
         <a class="btn btn-light mx-2" asp-controller="Veterinaria" asp-action="CadastrarAnimal"><i class="bi bi-file-earmark-plus"></i>Cadastar Novo Animal</a>
     </div>
     @if (TempData["MensagemSucesso"] != null)

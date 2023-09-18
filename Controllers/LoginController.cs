@@ -16,7 +16,10 @@ namespace ClinicaVeterinaria.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            bool desativar = Desativar();
+            if (desativar)
+                return View();
+            return NotFound("falha ao conectar");
         }
         public IActionResult Login(Funcionario login)
         {
@@ -29,8 +32,47 @@ namespace ClinicaVeterinaria.Controllers
             {
                 return View("Index");
             }
+            //FormsAuthentication.SetAuthCookie(username, false);
+            bool ativar = Ativar();
+            if (ativar)
+            {
+                return RedirectToAction("Index", "Veterinaria", new { area = "" });
+            }
+            return NotFound("Erro ao redirecionar");
+        }
+        [HttpPut]
+        public  bool Ativar() 
+        {
+            try
+            {
+                var funcionario = _Context.Funcionarios.FirstOrDefault(x => x.Email == "admin@admin.com.br");
+                funcionario.Ativo = true;
+                _Context.Funcionarios.Update(funcionario);
+                _Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
             
-            return RedirectToAction("Index", "Veterinaria", new { area = "" });
+        }
+        [HttpPut]
+        public bool Desativar()
+        {
+            try
+            {
+                var funcionario = _Context.Funcionarios.FirstOrDefault(x => x.Email == "admin@admin.com.br");
+                funcionario.Ativo = false;
+                _Context.Funcionarios.Update(funcionario);
+                _Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
     }

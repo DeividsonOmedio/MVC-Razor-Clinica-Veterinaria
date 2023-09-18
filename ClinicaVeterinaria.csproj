@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\**" />
-    <Content Remove="Migrations\**" />
-    <EmbeddedResource Remove="Migrations\**" />
-    <None Remove="Migrations\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Remove="wwwroot\css\png-lovely-dog.png" />
     <Content Remove="wwwroot\css\pngdog-puppy.png" />
     <Content Remove="wwwroot\css\podd.webp" />
@@ -39,6 +32,10 @@
     <None Include="wwwroot\img\png-lovely-dog.png" />
     <None Include="wwwroot\img\pngdog-puppy.png" />
     <None Include="wwwroot\img\podd.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

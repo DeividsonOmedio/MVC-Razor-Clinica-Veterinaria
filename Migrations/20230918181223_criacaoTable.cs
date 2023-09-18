@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ClinicaVeterinaria.Migrations
 {
     /// <inheritdoc />
-    public partial class criacaoStatus : Migration
+    public partial class criacaoTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

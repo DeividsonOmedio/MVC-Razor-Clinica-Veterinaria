@@ -1,6 +1,7 @@
 ﻿using ClinicaVeterinaria.Context;
 using ClinicaVeterinaria.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ClinicaVeterinaria.Controllers
@@ -18,7 +19,11 @@ namespace ClinicaVeterinaria.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            bool desativar = Desativar();
+            if (desativar)
+                return View();
+            return NotFound("falha ao conectar");
+            
         }
 
         public IActionResult buscarProcedimento(string codigo)
@@ -50,6 +55,23 @@ namespace ClinicaVeterinaria.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [HttpPut]
+        public bool Desativar()
+        {
+            try
+            {
+                var funcionario = _context.Funcionarios.FirstOrDefault(x => x.Email == "admin@admin.com.br");
+                funcionario.Ativo = false;
+                _context.Funcionarios.Update(funcionario);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }

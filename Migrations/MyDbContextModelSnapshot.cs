@@ -58,6 +58,9 @@ namespace ClinicaVeterinaria.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
